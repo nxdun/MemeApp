@@ -4,36 +4,44 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1 class="text-center text-primary mb-4">Edit Joke</h1>
 
-<h4>Jokes</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="jokeQ" class="control-label"></label>
-                <input asp-for="jokeQ" class="form-control" />
-                <span asp-validation-for="jokeQ" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="jokeA" class="control-label"></label>
-                <input asp-for="jokeA" class="form-control" />
-                <span asp-validation-for="jokeA" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+<div class="card bg-dark text-light shadow-lg p-4">
+    <h4 class="text-accent">Edit Details</h4>
+    <hr class="text-muted" />
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
 
-<div>
-    <a asp-action="Index">Back to List</a>
+        <div class="mb-3">
+            <label asp-for="jokeQ" class="form-label">Question</label>
+            <input asp-for="jokeQ" class="form-control bg-secondary text-light border-0" />
+            <span asp-validation-for="jokeQ" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="jokeA" class="form-label">Answer</label>
+            <input asp-for="jokeA" class="form-control bg-secondary text-light border-0" />
+            <span asp-validation-for="jokeA" class="text-danger"></span>
+        </div>
+        <div class="d-flex justify-content-end">
+            <input type="submit" value="Save" class="btn btn-primary me-2" />
+            <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+        </div>
+    </form>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<style>
+    .text-accent {
+        color: #03dac5;
+    }
+
+    .btn-primary:hover {
+        background-color: #018786 !important;
+    }
+</style>

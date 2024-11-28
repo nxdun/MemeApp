@@ -2,7 +2,131 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid bg-dark text-light min-vh-100 d-flex flex-column justify-content-center">
+    <!-- Main Content Section -->
+    <div class="text-center py-5">
+        <h1 class="display-4 mb-3 text-primary">Welcome to MemeApp</h1>
+        <p class="lead mb-4 text-muted">
+            Dive into the world of memes with our interactive and fun app.
+        </p>
+
+        <p class="h5 text-muted mb-5">
+            Explore our <a href="https://github.com/nxdun/MemeApp" target="_blank" class="text-primary">GitHub repository</a> for more details.
+        </p>
+
+        <!-- Animated Call-to-Action -->
+        <a href="#explore" class="btn btn-primary btn-lg mb-4 custom-btn-hover">
+            Explore Now
+        </a>
+    </div>
+
+    <!-- Explore Section -->
+    <div id="explore" class="text-center py-5">
+        <h2 class="text-accent mb-4">What is MemeApp?</h2>
+        <p class="lead text-muted mb-4">
+            MemeApp allows you to create, explore, and share hilarious memes with friends and family.
+            It’s easy to use and loads of fun!
+        </p>
+        <p class="h4 text-muted mb-4">
+            Join the fun, create a meme, and share it with the world.
+        </p>
+
+        <!-- Interactive Features Section -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-3 mb-4">
+                <div class="card bg-secondary border-0 shadow-lg custom-card-hover">
+                    <div class="card-body text-center">
+                        <i class="fas fa-rocket fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title text-light">Fast and Easy</h5>
+                        <p class="card-text text-muted">Create memes in seconds and share them with friends.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card bg-secondary border-0 shadow-lg custom-card-hover">
+                    <div class="card-body text-center">
+                        <i class="fas fa-share-alt fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title text-light">Share Everywhere</h5>
+                        <p class="card-text text-muted">Share memes on social media platforms effortlessly.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card bg-secondary border-0 shadow-lg custom-card-hover">
+                    <div class="card-body text-center">
+                        <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                        <h5 class="card-title text-light">Collaborate</h5>
+                        <p class="card-text text-muted">Invite your friends and create memes together in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-light py-4 text-center">
+        <p class="mb-0">© 2024 MemeApp | Built with <span class="text-danger">♥ Nuu</span> </p>
+    </footer>
 </div>
+
+<!-- Custom Styles -->
+<style>
+    .custom-btn-hover {
+        position: relative;
+        overflow: hidden;
+        transition: color 0.4s, transform 0.3s ease-out;
+    }
+
+        .custom-btn-hover:hover {
+            transform: translateY(-5px);
+            color: #fff;
+        }
+
+        .custom-btn-hover::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background-color: transparent;
+            transition: width 0.4s, height 0.4s, top 0.4s, left 0.4s;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .custom-btn-hover:hover::after {
+            width: 0;
+            height: 0;
+            top: 50%;
+            left: 50%;
+        }
+
+    .text-accent {
+        color: #03dac5;
+    }
+
+    .custom-card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body i {
+        transition: transform 0.3s ease;
+    }
+
+    .custom-card-hover:hover i {
+        transform: scale(1.2);
+    }
+
+    footer a {
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+</style>
+
+<!-- Include FontAwesome (for icons) -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
